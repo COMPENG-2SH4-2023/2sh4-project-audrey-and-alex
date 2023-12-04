@@ -1,13 +1,6 @@
 #include "objPosArrayList.h"
 
-// Paste your CUTE Tested implementation here.
-// Paste your CUTE Tested implementation here.
-// Paste your CUTE Tested implementation here.
-
-
-// Check lecture contents on general purpose array list construction, 
-// and modify it to support objPos array list construction.
-
+//constructor
 objPosArrayList::objPosArrayList()
 {
     aList = new objPos[ARRAY_MAX_CAP];
@@ -15,10 +8,12 @@ objPosArrayList::objPosArrayList()
     sizeArray = ARRAY_MAX_CAP;
 }
 
+//destructor
 objPosArrayList::~objPosArrayList()
 {
     delete[] aList;
 }
+
 
 int objPosArrayList::getSize()
 {
@@ -27,10 +22,11 @@ int objPosArrayList::getSize()
 
 void objPosArrayList::insertHead(objPos thisPos)
 {
-    if (sizeList == sizeArray) {
-        ;
-    }
     
+    if (sizeList == sizeArray) {
+        return;
+    }
+    //shift all elements down in list and insert at head
     else {
         for (int i = sizeList; i>0; i--) {
         aList[i].setObjPos(aList[i-1]);
@@ -44,9 +40,9 @@ void objPosArrayList::insertHead(objPos thisPos)
 void objPosArrayList::insertTail(objPos thisPos)
 {
     if (sizeList == sizeArray) {
-        ;
+        return;
     }
-    
+    //shift all elements down in list and insert at tail
     else {
         aList[sizeList].setObjPos(thisPos);
         sizeList++;
@@ -56,8 +52,9 @@ void objPosArrayList::insertTail(objPos thisPos)
 void objPosArrayList::removeHead()
 {
     if (sizeList == 0) {
-        ;
+        return;
     }
+    //shift all elements up in list 
     else {
         for (int i = 0; i<sizeList; i++) {
         aList[i].setObjPos(aList[i+1]);
@@ -70,8 +67,9 @@ void objPosArrayList::removeHead()
 void objPosArrayList::removeTail()
 {
     if (sizeList == 0) {
-        ;
+        return;
     }
+    //remove last element
     else {
         sizeList--;
     }

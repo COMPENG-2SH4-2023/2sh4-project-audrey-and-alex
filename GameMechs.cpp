@@ -1,6 +1,7 @@
 #include "GameMechs.h"
 #include "MacUILib.h"
 
+//constructor
 GameMechs::GameMechs()
 {
     input = 0;
@@ -12,6 +13,7 @@ GameMechs::GameMechs()
 
 }
 
+//special constructor
 GameMechs::GameMechs(int boardX, int boardY)
 {
     input = 0;
@@ -22,10 +24,6 @@ GameMechs::GameMechs(int boardX, int boardY)
     score = 0;
 
 }
-
-// do you need a destructor?
-
-
 
 bool GameMechs::getExitFlagStatus()
 {

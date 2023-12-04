@@ -6,21 +6,24 @@
 
 #include "GameMechs.h"
 #include "objPos.h"
+#include "Player.h"
 
 using namespace std;
+
 
 class Food 
 {
     private:
-        objPos foodPos;
+        objPos foodPos; //food object 
 
-        GameMechs* mainGameMechsRef;
+        GameMechs* mainGameMechsRef; //GameMech reference
 
     public:
-    Food(GameMechs* thisGMRef);
+    Food(GameMechs* thisGMRef); // constructor
 
-    void generateFood(objPos blockOff);
+    void generateFood(objPosArrayList* blockOff); 
     void getFoodPos(objPos &returnPos);
+   
 
 
 };
